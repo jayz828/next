@@ -66,3 +66,9 @@ body, html {
      text-align: center;
  }
 
+
+ .account {
+    position: relative;
+     top: -30px;
+     left: 150px;
+ }

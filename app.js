@@ -1,6 +1,8 @@
+
 /**
  * Created by jasonnatividad on 5/7/17.
  */
+
 
 var express = require('express');
 
@@ -31,16 +33,28 @@ app.use(express.static('src/views'));
 
 app.get('/', function(req,res) {
 
-    res.sendFile(path.join(__dirname, 'src/index.html'))
+    res.sendFile(path.join(__dirname, 'src/views/signUp/index.html'));
 
 });
 
 
-app.get('/Books', function(req,res) {
+app.get('/login', function(req,res) {
 
-    res.send('Hello Books');
+    res.sendFile(path.join(__dirname, 'src/views/login/login.html'));
 
 });
+
+
+app.get('/profile', function(req,res) {
+
+    res.sendFile(path.join(__dirname, 'src/views/login/login.html'));
+
+});
+
+
+
+
+
 
 
 app.listen(port, function(err) {

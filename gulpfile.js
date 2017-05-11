@@ -29,14 +29,15 @@ gulp.task('inject', function () {
     var options = {
         bowerJson: require('./bower.json'),
         directory: './public/lib',
-        ignorePath: '../../../public'
-    }
+        //css and js files having problems with ignorepath
+        ignorePath: '../../public'
+    };
 
 
-    return gulp.src('./src/views/signUp/*.html')
+    return gulp.src('./src/views/*.ejs')
         .pipe(wiredep(options))
         .pipe(inject(injectSrc, injectOptions))
-        .pipe(gulp.dest('./src/views/signUp'));
+        .pipe(gulp.dest('./src/views'));
 });
 
 
@@ -49,7 +50,7 @@ gulp.task('serve', ['style', 'inject'], function () {
         },
         watch: jsFiles
 
-    }
+    };
 
     return nodemon(options)
         .on('restart', function (ev) {

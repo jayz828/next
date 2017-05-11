@@ -6,21 +6,36 @@
 
 var express = require('express');
 
-
 var path = require('path');
-
 
 var app = express();
 
-
-var port = 3000;
+var port = process.env.PORT || 5000;
 
 // app.use setups middleware, used by express first.
 app.use(express.static('public'));
 app.use(express.static('src/views'));
 
+// templating engine code
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
+
+// end templating
 
 
+
+// routes
+app.get('/', function (req, res) {
+    res.render('signup', {title: 'Sign Up NeXT->', list: ['a','b']});
+});
+
+
+
+app.get('/login', function(req,res) {
+
+    res.render('login', {title: 'Login NeXT->'});
+
+});
 
 
 // request - information coming from the browser
@@ -31,18 +46,14 @@ app.use(express.static('src/views'));
 // ROUTES
 
 
-app.get('/', function(req,res) {
+// app.get('/', function(req,res) {
+//
+//     res.sendFile(path.join(__dirname, 'src/views/signUp/index.html'));
+//
+// });
 
-    res.sendFile(path.join(__dirname, 'src/views/signUp/index.html'));
-
-});
 
 
-app.get('/login', function(req,res) {
-
-    res.sendFile(path.join(__dirname, 'src/views/login/login.html'));
-
-});
 
 
 app.get('/profile', function(req,res) {
@@ -50,11 +61,6 @@ app.get('/profile', function(req,res) {
     res.sendFile(path.join(__dirname, 'src/views/login/login.html'));
 
 });
-
-
-
-
-
 
 
 app.listen(port, function(err) {

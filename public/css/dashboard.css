@@ -1,0 +1,413 @@
+body {
+    background-color: #D5D8DA;
+    font-family: "Roboto";
+
+}
+
+.test {
+    border: 5px solid red;
+}
+
+.black-text {
+    color: black;
+}
+
+.white-text {
+    color: white;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.fluid-container-fix {
+
+    /* Margin settings to remove white space from left and right of fluid container*/
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+/* Header */
+
+#main-header {
+    /*width: 1920px;*/
+    height: 3.7em;
+    background-color: #2768D0;
+    z-index: -1000;
+
+
+}
+
+#logo {
+    height: 75px;
+    margin-top: -15px;
+    margin-left: 3em;
+}
+
+
+#next-logo {
+    margin-top: 0;
+    margin-left: 10px;
+    padding-top: 5px;
+    color: white;
+}
+
+#header-logo {
+    color: white;
+    margin: 0;
+    padding-top: 0.625em;
+    padding-left: 0.625em;
+}
+
+
+#main-content {
+    float: left;
+}
+
+
+/*  Side bar */
+
+#side-bar {
+
+    /* Try to find another way to achieve 100% height for browser window*/
+    height: 93vh;
+    margin-top: 0;
+    padding-top: 0;
+    background-color: #30373E;
+    /*z-index: -1000;*/
+    /* Removing zindex fixed select dropd down issues*/
+    position: relative;
+
+
+
+
+
+}
+
+#side-bar h5{
+    padding-top: 2em;
+    margin: 0;
+    margin-left: 1em;
+}
+
+#side-bar p {
+    color: white;
+    float: left;
+    padding-top: 1em;
+    margin: 0;
+    margin-left: 1em;
+
+}
+
+#side-bar select {
+    margin-left: 1em;
+    margin-top: 1em;
+    float: left;
+}
+
+#side-bar img {
+    height: 50px;
+    float: left;
+    margin: 10px 5px 10px 10px;
+}
+
+
+/*#section-hours {
+	background: #00ACAC;
+}*/
+
+.menu-tile {
+    background: #00ACAC;
+    height: 50px;
+    width: 100%;
+}
+.menu-tile p {
+    text-align: center;
+    float: none !important;
+}
+
+.associate-position {
+    color: #616D7D !important;
+    margin-right: 10px !important;
+}
+
+#hours-info {
+    margin-top: 1em;
+}
+
+
+#start-stop-time {
+
+
+
+}
+
+/* Status Panels*/
+
+.tiles {
+    /*	height: 50px;
+        width: 100px;*/
+
+    height: 5.5em;
+    width: 12em;
+    border-radius: 10px;
+    color: white;
+    font-family: "Helvetica";
+
+}
+
+.tiles > h4 {
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+#tiles-first {
+    background-color: #3C454D;
+
+}
+#tiles-second {
+    background-color: #17B6A4;
+}
+#tiles-third {
+    background-color: #2184DA;
+}
+
+#tiles-fourth {
+    background-color: #38AFD3;
+}
+
+/* Window Panels*/
+
+.window-panel {
+    height: 400px;
+    background-color: white;
+    background: linear-gradient(0deg, #FFFFFF 25em, #272C31 15em);
+
+    margin-left: 50px;
+    margin-top: 3em;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    color: white;
+
+
+}
+
+
+.window-title-bar {
+
+    /*background: red;*/
+    /*	float: left;
+        display: inline-block;
+        width: 100%;*/
+}
+
+
+
+
+/* Below is what fixed the window title bar elements */
+.window-name {
+    float: left;
+
+}
+
+
+
+
+
+.window-buttons > img {
+    height: 2em;
+    margin-top: 5px;
+    padding: 2px;
+    margin-left: -10px;
+    float: right;
+
+}
+
+.window-content {
+    padding-top: 20px;
+}
+
+.window-content > select {
+    color: black;
+}
+
+.window-table {
+
+    color: black;
+}
+
+.window-table th {
+
+    padding-left: 60px;
+    border-bottom:  2px solid black;
+    /*width: 100px;*/
+
+}
+
+.window-table th:nth-child(1) {
+    padding-left: 10px;
+}
+
+
+.table-spacer {
+    height: 15px;
+}
+
+
+.tally-input {
+    width: 50px;
+    margin-left: 50px;
+    text-align: right;
+}
+
+#add-button {
+    color: black;
+
+    width: 100px;
+
+
+}
+
+#bottom-section {
+
+
+
+
+}
+
+.input-buttons {
+    display: inline-block;
+    background: red;
+    float: left;
+}
+
+#production-panel {
+
+    /*line-height: 100px;*/
+    height: 50px;
+    width: 50%;
+    background: #FFFB9F;
+    float: right;
+    margin-top: -20px;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    border-radius: 10px;
+
+
+}
+
+#production-panel p {
+    margin: 0;
+}
+#production-panel h3 {
+    /*vertical-align: middle;*/
+    /*color: black;*/
+    margin: 0;
+
+}
+
+#hours-panel {
+    background: #01BF86;
+    border-radius: 5px;
+    float: right;
+    height: 75px;
+    width: 60%;
+}
+
+#hours-panel p{
+
+    margin:0;
+}
+
+
+#non-scheduled-panel input{
+    width: 30px;
+
+}
+
+#dates ul{
+    display: inline;
+    float: left;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: 5px;
+}
+
+#dates li {
+    margin-top: 16px;
+
+}
+
+#graph {
+    float: left;
+    margin-left: 25px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 250px;
+    width: 120px;
+    padding-left: 0;
+
+}
+
+#graph meter {
+    display: block;
+
+    margin-top: 20px;
+
+    width: 130px;
+}
+
+#graph li {
+    /*list-style: none;*/
+    width: 100%;
+}
+
+#graph p{
+    color: black;
+    position: relative;
+    margin-top: -15px;
+    margin-left: 50px;
+
+
+}
+
+#main-content {
+    /*background-color: black;*/
+}
+
+.spacer {
+    height: 3em;
+}
+
+
+
+.clear-fix {
+    clear: both;
+}
+
+/*  Catch All*/
+
+img, embed, object, video {
+    max-width: 100%;
+}
+
+.date-label h2{
+    font-size: 3em;
+
+}
+
+#weekdays {
+    margin-top: 30px;
+}
+
+    #weekdays li {
+        list-style: none;
+        display: inline;
+
+    }
+
+    #weekdays p {
+        font-size: 1.5em;
+    }

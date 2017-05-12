@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+
+
+    <!-- Bootstrap CDN -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <!-- endbower -->
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+<body>
+
+
+
+
+
+
+
+<div id="header-section" class="container-fluid">
+    <header id="main-header" class="fluid-container-fix">
+
+
+        <!-- <h4 id="header-logo">RE-Track</h4> -->
+
+        <h2 id="next-logo">NEXT<i class="fa fa-arrow-right" aria-hidden="true"></i></h2>
+
+
+    </header>
+
+
+
+</div>  <!-- End header section -->
+
+
+<div id="sidebar-section" class="col-lg-2 col-md-2">
+
+    <aside id="side-bar" class="fluid-container-fix">
+
+        <img src="img/profile-pic.png" alt=""><h5 class="white-text"><span><%= associateName %></span></h5>
+        <h6 class="associate-position"><%= position %></h6>
+
+
+        <div class="menu-tile">
+
+            <p>Overview</p>
+        </div>
+
+        <div class="clear-fix"></div>
+
+
+
+
+
+
+    </aside>
+
+
+</div>
+
+
+<div class="container-fluid">
+
+
+    <div class="col-lg-10">
+        <div id="dashboard-main">
+
+
+            <div class="row">
+
+
+                <!-- Status Panels -->
+
+                <div class="col-lg-3 col-md-3 col-lg-offset-1">
+                    <div id="tiles-first" class="tiles">
+                        <h4>Current MTD:</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 md-3">
+                     <div class="date-label">
+                         <h2>May 2017</h2>
+                     </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-lg-offset-2">
+                    <div id="tiles-fourth" class="tiles">
+                        <h4>Goal:</h4>
+                    </div>
+                </div>
+
+            </div> <!-- /end row -->
+
+
+            <div class="row">
+
+                <div class="col-lg-12 test">
+                <div id="weekdays">
+
+                    <!--TRY USING DIVS INSTEAD OF LIST ITEM-->
+
+                    <ul>
+                        <li class="col-lg-1"><p>Sun</p></li>
+                        <li class="col-lg-1"><p>Mon</p></li>
+                        <li class="col-lg-1"><p>Tues</p></li>
+                        <li class="col-lg-1"><p>Wed</p></li>
+
+
+                        <li class="col-lg-1"><p>Thurs</p></li>
+                        <li class="col-lg-1"><p>Fri</p></li>
+                        <li class="col-lg-1"><p>Sat</p></li>
+                    </ul>
+
+                </div>
+                </div> <!-- /end col 12 -->
+
+            </div> <!-- /end row -->
+
+        </div> <!-- /end dashboard -->
+    </div> <!-- /end column -->
+
+</div> <!-- /end container -->
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+<!-- Bootstrap JS File -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+</body>
+</html>

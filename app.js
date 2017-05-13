@@ -42,8 +42,13 @@ app.get('/dashboard', function(req,res) {
 
     res.render('dashboard', {title: 'Dashboard NeXT->',
                             associateName: 'Jason Natividad',
-                            position: 'Medical Expense Tech'});
-
+                            position: 'Medical Expense Tech',
+                            nav: [{
+                                    Link: '/Overview',
+                                    Text: 'Overview'}, {
+                                    Link: '/Test',
+                                    Text: 'Text'}]});
+                                // DON'T FORGET TO ADD LINKS ABOVE
 });
 
 

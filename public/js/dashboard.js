@@ -5,7 +5,9 @@
 
 (function(){
 
-    var currentDate = new Date();
+    // var currentDate = new Date();
+
+    var currentDate = new Date(2017, 7,1);
 
 
     var listOfMonths = ['January', 'February', 'March', 'April', 'May',
@@ -22,9 +24,12 @@
 
     var currentYear = currentDate.getFullYear();
 
+    var calendarGrids = document.querySelectorAll("#calendar-grid span");
 
 
+    // var numdays = daysInMonth(1,2017);
 
+    // alert(numdays);
 
     // alert(firstOfTheMonth);
 
@@ -32,6 +37,9 @@
 
     updateCalendar(currentMonth, currentYear);
 
+
+
+    console.log(calendarGrids);
 
 
     // Update page with current month and year
@@ -52,13 +60,35 @@
         // Place the first of the month.
         var firstOfTheMonth = new Date(currentYear,currentDate.getMonth(), 1);
 
+
+        var totalDays = new Date(currentYear, currentDate.getMonth() + 1, 0).getDate();
+
+        alert(firstOfTheMonth);
+
+        alert(totalDays);
+
         var firstDay = weekdays[firstOfTheMonth.getDay()];
 
-        var placeDay = document.getElementById('day-' + firstOfTheMonth.getDay());
+        // var placeDay = document.getElementById('day-' + firstOfTheMonth.getDay());
+        //
+        // placeDay.innerHTML = 1;
 
-        placeDay.innerHTML = 1;
+        calendarGrids[firstOfTheMonth.getDay()].innerHTML = 1;
+
+        for (var i = 2; i < totalDays  + 1; i++) {
+            calendarGrids[firstOfTheMonth.getDay() + i -1].innerHTML = i;
+        };
+
+
+
 
     };
+
+
+
+    function daysInMonth(month, year) {
+        return new Date(year, month, 0).getDate();
+    }
 
 
 

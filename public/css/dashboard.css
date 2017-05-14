@@ -416,6 +416,12 @@ img, embed, object, video {
     border: 3px solid black;
 }
 
-#week-2 {
+.week-2 {
     margin-left: -30px;
+}
+
+.row-date {
+    height: 75px;
+    border: 2px solid black;
+
 }

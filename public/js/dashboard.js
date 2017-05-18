@@ -5,9 +5,10 @@
 
 (function(){
 
-    // var currentDate = new Date();
+    var currentDate = new Date();
 
-    var currentDate = new Date(2017, 7,1);
+    // Test dates below
+    // var currentDate = new Date(2017, 7,1);
 
 
     var listOfMonths = ['January', 'February', 'March', 'April', 'May',
@@ -88,7 +89,11 @@
 
     function daysInMonth(month, year) {
         return new Date(year, month, 0).getDate();
-    }
+    };
+
+    function getNextGoal() {
+
+    };
 
 
 

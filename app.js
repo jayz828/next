@@ -12,6 +12,28 @@ var app = express();
 
 var port = process.env.PORT || 5000;
 
+
+// MY SQL SETTINGS
+
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'admin',
+    password: 'secret',
+    database: 'next_db'
+
+});
+
+var q = 'SELECT CURDATE()';
+
+connection.query(q, function (error, results, fields) {
+   if (error) throw error;
+    console.log(results);
+
+});
+
+connection.end();
+
 // app.use setups middleware, used by express first.
 app.use(express.static('public'));
 app.use(express.static('src/views'));

@@ -40,6 +40,31 @@
 
 
 
+    // START XML REQUEST
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET","../js/sample.json",true);
+    xhr.responseType = "text";
+    xhr.send();
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            var myStuff = JSON.parse(xhr.responseText);
+
+        }
+        console.log(myStuff);
+        getNextGoal(myStuff);
+    }
+
+    //
+    //         for (i = 0; i <myStuff.presidents.length; i++) {
+    //             console.log(myStuff.presidents[i].first);
+    //             console.log(myStuff.presidents[i].last);
+    //             console.log(myStuff.vicepresidents[i].first);
+    //             console.log(myStuff.vicepresidents[i].last);
+    //         }
+
+     // END REQUEST
     console.log(calendarGrids);
 
 
@@ -64,9 +89,6 @@
 
         var totalDays = new Date(currentYear, currentDate.getMonth() + 1, 0).getDate();
 
-        alert(firstOfTheMonth);
-
-        alert(totalDays);
 
         var firstDay = weekdays[firstOfTheMonth.getDay()];
 
@@ -91,10 +113,36 @@
         return new Date(year, month, 0).getDate();
     };
 
-    function getNextGoal() {
+    function getNextGoal(data) {
+        // console.log(data["May"]["day"]["1"]);
+
+        var goal = 130;
+
+        var total = 0
+        var keyTotal = 0;
+
+
+        // iterate through the days key in the month
+        // var data = {a: 1, b: 2};
+        for (var key in data["May"]["day"]) {
+            if (data["May"]["day"].hasOwnProperty(key)) {
+                var val = data["May"]["day"][key];
+                total += val;
+                keyTotal +=1;
+            }
+        }
+
+        console.log(total);
+        console.log(keyTotal);
+        keyTotal += 1;
+        var targetGoal = (130 * keyTotal) - total.toFixed(2);
+        console.log(targetGoal.toFixed(2));
+
+        // var targetGoal = 130 * keyTotal;
+        // console.log(total);
+
 
     };
-
 
 
 })();

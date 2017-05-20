@@ -425,3 +425,9 @@ img, embed, object, video {
     border: 2px solid black;
 
 }
+
+.prod-input {
+    display: block;
+    width: 50px;
+    /*visibility: hidden;*/
+}

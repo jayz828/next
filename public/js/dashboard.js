@@ -1,13 +1,13 @@
 /**
  * Created by jasonnatividad on 5/13/17.
  */
-
-
 (function(){
 
     var currentDate = new Date();
 
     // Test dates below
+
+
     // var currentDate = new Date(2017, 7,1);
 
 
@@ -27,6 +27,12 @@
 
     var calendarGrids = document.querySelectorAll("#calendar-grid span");
 
+    var calendarInputs = document.querySelectorAll("#calendar-grid input");
+
+    var calendarStartPosition = 0;
+
+
+    console.log(calendarInputs);
 
     // var numdays = daysInMonth(1,2017);
 
@@ -53,8 +59,9 @@
 
         }
         console.log(myStuff);
+        loadCalenderData(myStuff);
         getNextGoal(myStuff);
-    }
+    };
 
     //
     //         for (i = 0; i <myStuff.presidents.length; i++) {
@@ -86,7 +93,8 @@
         // Place the first of the month.
         var firstOfTheMonth = new Date(currentYear,currentDate.getMonth(), 1);
 
-
+        // alert(firstOfTheMonth);
+        // Total days in month;
         var totalDays = new Date(currentYear, currentDate.getMonth() + 1, 0).getDate();
 
 
@@ -95,6 +103,13 @@
         // var placeDay = document.getElementById('day-' + firstOfTheMonth.getDay());
         //
         // placeDay.innerHTML = 1;
+
+        // alert(firstOfTheMonth.getDay());
+
+        // start position is a global variable
+        calendarStartPosition = firstOfTheMonth.getDay();
+
+        // get day returns the number of the week ie 1 is a monday,  3 is a wednesday.
 
         calendarGrids[firstOfTheMonth.getDay()].innerHTML = 1;
 
@@ -116,7 +131,10 @@
     function getNextGoal(data) {
         // console.log(data["May"]["day"]["1"]);
 
-        var goal = 130;
+        var goal = 120;
+        var currentProd = document.getElementById('current-prod');
+        var nextDay = document.getElementById('next-day');
+
 
         var total = 0
         var keyTotal = 0;
@@ -128,19 +146,49 @@
             if (data["May"]["day"].hasOwnProperty(key)) {
                 var val = data["May"]["day"][key];
                 total += val;
-                keyTotal +=1;
+                if (val === 0) {
+
+                } else {
+
+                    keyTotal +=1;
+
+                }
             }
         }
 
         console.log(total);
         console.log(keyTotal);
+        currentProd.innerHTML = (total/keyTotal).toFixed(2);
+
+
         keyTotal += 1;
-        var targetGoal = (130 * keyTotal) - total.toFixed(2);
+        var targetGoal = (goal * keyTotal) - total.toFixed(2);
         console.log(targetGoal.toFixed(2));
+        targetGoal = targetGoal.toFixed(2);
+
+        nextDay.innerHTML = targetGoal;
+
+
 
         // var targetGoal = 130 * keyTotal;
         // console.log(total);
 
+
+    };
+
+    function loadCalenderData(data) {
+
+        var start = calendarStartPosition;
+        alert(start);
+
+        // copied from next goal
+        for (var key in data["May"]["day"]) {
+            if (data["May"]["day"].hasOwnProperty(key)) {
+                var val = data["May"]["day"][key];
+                calendarInputs[start].value = val;
+                start++;
+            }
+        }
 
     };
 

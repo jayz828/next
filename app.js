@@ -69,8 +69,13 @@ app.get('/dashboard', function(req,res) {
                                     Link: '/Overview',
                                     Text: 'Overview'}, {
                                     Link: '/Test',
-                                    Text: 'Text'}]});
-                                // DON'T FORGET TO ADD LINKS ABOVE
+                                    Text: 'Text'}],
+                            // DON'T FORGET TO ADD LINKS ABOVE
+
+                            data: {
+
+                            }
+                            });
 });
 
 

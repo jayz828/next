@@ -45,6 +45,7 @@
     updateCalendar(currentMonth, currentYear);
 
 
+    getWeekDayCount(currentDate);
 
     // START XML REQUEST
 
@@ -131,7 +132,7 @@
     function getNextGoal(data) {
         // console.log(data["May"]["day"]["1"]);
 
-        var goal = 120;
+        var goal = 130;
         var currentProd = document.getElementById('current-prod');
         var nextDay = document.getElementById('next-day');
 
@@ -162,9 +163,10 @@
 
 
         keyTotal += 1;
-        var targetGoal = (goal * keyTotal) - total.toFixed(2);
+        var targetGoal = (goal * (keyTotal+ 4)) - total.toFixed(2);
         console.log(targetGoal.toFixed(2));
         targetGoal = targetGoal.toFixed(2);
+        console.log(targetGoal + 'target goal');
 
         nextDay.innerHTML = targetGoal;
 
@@ -179,7 +181,7 @@
     function loadCalenderData(data) {
 
         var start = calendarStartPosition;
-        alert(start);
+        // alert(start);
 
         // copied from next goal
         for (var key in data["May"]["day"]) {
@@ -191,6 +193,32 @@
         }
 
     };
+
+    function getWeekDayCount(date) {
+
+        // MIGHT NOT NEED TO PASS DATE PARAMETER
+
+        var totalDays = new Date(currentYear, currentDate.getMonth() + 1, 0).getDate();
+
+        var month = currentDate.getMonth();
+        var days = currentDate.getDate();
+
+        var daysPast = 0, daysToGo = 0;
+        var day;
+
+        // alert(currentDate);
+
+        // Count past days
+        while  (currentDate.getMonth() == month) {
+            day = currentDate.getDay();
+            daysPast += (day == 0 || day == 6)? 0 : 1;
+            currentDate.setDate(--days);
+        }
+
+        alert(daysPast + 'days past');
+
+    };
+
 
 
 })();

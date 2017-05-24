@@ -164,6 +164,8 @@
 
         keyTotal += 1;
         var targetGoal = (goal * (keyTotal+ 4)) - total.toFixed(2);
+        // var targetGoal = (goal * keyTotal) - total.toFixed(2);
+
         console.log(targetGoal.toFixed(2));
         targetGoal = targetGoal.toFixed(2);
         console.log(targetGoal + 'target goal');
@@ -198,7 +200,12 @@
 
         // MIGHT NOT NEED TO PASS DATE PARAMETER
 
-        var totalDays = new Date(currentYear, currentDate.getMonth() + 1, 0).getDate();
+
+
+        // var totalDays = new Date(currentYear, currentDate.getMonth() + 1, 0).getDate();
+
+        var currentDate = new Date();
+
 
         var month = currentDate.getMonth();
         var days = currentDate.getDate();
@@ -206,16 +213,51 @@
         var daysPast = 0, daysToGo = 0;
         var day;
 
+        var totalWeekDays = 0;
+
         // alert(currentDate);
 
         // Count past days
-        while  (currentDate.getMonth() == month) {
+        while  (currentDate.getMonth() === month) {
             day = currentDate.getDay();
-            daysPast += (day == 0 || day == 6)? 0 : 1;
+            // daysPast += (day == 0 || day == 6)? 0 : 1;
+
+            if (day === 0 || day === 6) {
+                daysPast+= 0;
+            } else {
+                daysPast +=1;
+            }
             currentDate.setDate(--days);
         }
+        //
+        // // reset day
 
-        alert(daysPast + 'days past');
+        // Reset and count days to come
+
+        currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+
+        days = currentDate.getDate();
+
+        while (currentDate.getMonth() === month) {
+            day = currentDate.getDay();
+            // alert(day);
+
+            if (day === 0 || day === 6) {
+                daysToGo+= 0;
+            } else {
+                daysToGo+=1;
+            }
+
+            currentDate.setDate(++days);
+
+        }
+
+        totalWeekDays = daysPast + daysToGo;
+
+        alert(totalWeekDays);
+
+        // alert(daysPast + 'days past');
 
     };
 

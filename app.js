@@ -24,7 +24,9 @@ var connection = mysql.createConnection({
 
 });
 
-var q = 'SELECT CURDATE()';
+// var q = 'SELECT CURDATE()';
+
+var q = 'SELECT * FROM associates;';
 
 connection.query(q, function (error, results, fields) {
    if (error) throw error;

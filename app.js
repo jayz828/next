@@ -13,28 +13,28 @@ var app = express();
 var port = process.env.PORT || 5000;
 
 
-// MY SQL SETTINGS
+// MY SQL SETTINGS - comment out mysql code to run on surface pro
 
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'admin',
-    password: 'secret',
-    database: 'next_db'
+// var mysql = require('mysql');
+// var connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'admin',
+//     password: 'secret',
+//     database: 'next_db'
+//
+// });
+//
+// // var q = 'SELECT CURDATE()';
+//
+// var q = 'SELECT * FROM associates;';
+//
+// connection.query(q, function (error, results, fields) {
+//    if (error) throw error;
+//     console.log(results);
+//
+// });
 
-});
-
-// var q = 'SELECT CURDATE()';
-
-var q = 'SELECT * FROM associates;';
-
-connection.query(q, function (error, results, fields) {
-   if (error) throw error;
-    console.log(results);
-
-});
-
-connection.end();
+// connection.end();
 
 // app.use setups middleware, used by express first.
 app.use(express.static('public'));
@@ -48,7 +48,7 @@ app.set('view engine', 'ejs');
 
 
 
-// routes
+//  ROUTES
 app.get('/', function (req, res) {
     res.render('signup', {title: 'Sign Up NeXT->', list: ['a','b']});
 });
@@ -81,6 +81,10 @@ app.get('/dashboard', function(req,res) {
 });
 
 
+app.get('*', function(req, res) {
+
+    res.send('404 error');
+});
 
 // request - information coming from the browser
 // response - is what we deal with

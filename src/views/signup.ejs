@@ -25,18 +25,18 @@
 
             <div id="login-box" class="">
 
-                <form action="">
+                <form action="/newuser" method="POST">
 
-                    <input type="text" class="form-control" placeholder="First Name">
-                    <input type="text" class="form-control" placeholder="Last Name">
+                    <input type="text" name="firstName" class="form-control" placeholder="First Name">
+                    <input type="text" name="lastName" class="form-control" placeholder="Last Name">
                     <br>
-                    <input type="text" class="form-control" placeholder="E-Mail" size="42">
+                    <input type="text" name="email" class="form-control" placeholder="E-Mail" size="42">
 
                     <br>
 
 
 
-                    <button type="button"  id="signup-btn" class="btn btn-success btn-lg input-group">Sign up</button>
+                    <button type="submit"  id="signup-btn" class="btn btn-success btn-lg input-group">Sign up</button>
 
                     <a href="/login" class="account">Already have an account?</a>
 

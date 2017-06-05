@@ -10,7 +10,12 @@ var path = require('path');
 
 var app = express();
 
+var bodyParser =  require('body-parser');
+
 var port = process.env.PORT || 5000;
+
+app.use(bodyParser.urlencoded({extended: true}));
+
 
 
 // MY SQL SETTINGS - comment out mysql code to run on surface pro
@@ -49,6 +54,19 @@ app.set('view engine', 'ejs');
 
 
 //  ROUTES
+
+app.post('/newuser', function(req,res) {
+    var firstName = req.body.firstName;
+    var lastName = req.body.lastName;
+    var email= req.body.email;
+
+    console.log(firstName);
+    console.log(lastName);
+    console.log(email);
+    res.send('new user post here');
+});
+
+
 app.get('/', function (req, res) {
     res.render('signup', {title: 'Sign Up NeXT->', list: ['a','b']});
 });

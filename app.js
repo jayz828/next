@@ -83,7 +83,7 @@ app.get('/dashboard', function(req,res) {
 
 app.get('*', function(req, res) {
 
-    res.send('404 error');
+    res.render('404');
 });
 
 // request - information coming from the browser

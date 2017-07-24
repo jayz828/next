@@ -1,0 +1,193 @@
+
+
+ <!--ADD PARTIALS LATER ON ONCE EVERYTHING IS WORKING  -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+
+
+    <!-- Bootstrap CDN -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/lib/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
+    <!-- endbower -->
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/tally.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+</head>
+<body>
+
+
+<div class="container">
+
+    <table border=1 style="width: 75%">
+        <tr>
+            <td><h3>NAME:</h3></td>
+            <td width="40%"><h4>Jason Natividad</h4></td>
+            <td width="15%"></td>
+            <td><h3>DATE:</h3></td>
+            <td width="25%"><h4>07/21/2017</h4></td>
+        </tr>
+    </table>
+    <table border=1 style="width: 75%">
+        <tr>
+            <th width="5%"></th>
+            <th width="30%">Job Function</th>
+            <th width="10%">Item/Time</th>
+            <th width="10%">RE</th>
+            <th width="10%">DONE</th>
+            <th width="10%">HRS EARN</th>
+            <th width="25%">Notes</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Bills Keyed</td> 
+            <td>BILLS</td>  
+            <td>20</td>
+            <td><input type="text"></td>
+            <td>0.00</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Bills Keyed</td> 
+            <td>BILLS</td>  
+            <td>20</td>
+            <td><input type="text"></td>
+            <td>0.00</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table border="1" style="width: 75%">
+        <tr>
+            <th class="tableBlue" width="5%"></th>
+            <th class="tableBlue" width="30%">Total</th>
+            <th class="tableBlue" width="10%"></th>
+            <th class="tableBlue" width="10%"></th>
+            <th class="tableBlue" width="10%"></th>
+            <th class="tableBlue" width="10%"></th>
+            <th class="tableBlue" width="25%"></th>
+
+        </tr>
+
+    </table>
+
+    <!-- <table border="1" style="width: 75%">
+        <tr>
+            <th width="100%">test</th>
+        </tr>
+        <tr>
+            <th width="40%">Non-Scheduled Time</th>
+            <th width="10%">Mins</th>
+            <th width="10%">Hours</th>
+        </tr>
+    </table> -->
+   
+    
+<table class="inline-table" width="45%" border="1" bgcolor="#ffffff">
+ <colgroup>
+<col width="70%">
+<col width="15%">
+<col width="15%">
+<!-- <col width="7%">
+<col width="10%"> -->
+</colgroup>
+
+    <tr>
+        <th colspan="1">Non-Scheduled Time</th>
+        <th colspan="1">Mins</th>  
+        <th>Hours</th>   
+        <!-- <th colspan="1">Hours Worked</th> 
+        <th colspan="1">Production</th>  -->
+    </tr>
+    <tr>
+        <td class="non-sched-type" colspan="1">Celebrations</td>
+        <td colspan="1"></td>  
+        <td>0.00</td>   
+        <!-- <td></td>  -->
+    </tr>
+    <tr>
+        <td class="non-sched-type"  colspan="1">Meetings</td>
+        <td colspan="1"></td>  
+        <td>0.00</td>   
+        <!-- <td></td>  -->
+    </tr>
+    <tr>
+        <td class="non-sched-type"  colspan="1">Projects</td>
+        <td colspan="1"></td>  
+        <td>0.00</td>   
+        <!-- <td></td>  -->
+    </tr>
+    <tr>
+        <td class="non-sched-type"  colspan="1">Celebrations</td>
+        <td colspan="1"></td>  
+        <td>0.00</td>   
+        <!-- <td></td>  -->
+    </tr>
+    <tr>
+        <td class="non-sched-type"  colspan="1">Celebrations</td>
+        <td colspan="1"></td>  
+        <td>0.00</td>   
+        <!-- <td></td>  -->
+    </tr>
+    <tr>
+        <td class="non-sched-type"  colspan="1">Celebrations</td>
+        <td colspan="1"></td>  
+        <td>0.00</td>   
+        <!-- <td></td>  -->
+    </tr>
+    <tr>
+        <td class="non-sched-type"  colspan="1">Celebrations</td>
+        <td colspan="1"></td>  
+        <td>0.00</td>   
+        <!-- <td></td>  -->
+    </tr>
+    <tr>
+        <td class="non-sched-type"  colspan="1">Total</td>
+        <td colspan="1"></td>  
+        <td>0.00</td>   
+         <td></td>  
+    </tr>
+    <tr>
+        <th colspan="4">Additonal Notes</th>
+    </tr>
+
+</table> 
+<table id="production-status" class="inline-table" border="0">
+
+    <tr>
+        <th class="prod-status-header">Hours Work</th>
+        <th class="prod-status-header test">Total Production</th>
+    </tr>
+</table>
+
+
+    <!--UNABLE TO GET ROWS WITH DIFFERENT LENGTHS  TRY LINK BELOW-->
+    <!-- https://stackoverflow.com/questions/5937774/table-cell-width-issue -->
+
+</div>   <!-- /end container -->
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+<!-- Bootstrap JS File -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

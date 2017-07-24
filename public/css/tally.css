@@ -1,0 +1,46 @@
+table input {
+    width: 50px;
+}
+
+table {
+    text-align: center;
+}
+
+table th {
+    background: rgb(191,191,191);
+}
+
+table td {
+    background: rgb(255,255,153);
+}
+
+.tableBlue {
+    background: rgb(184, 204, 228);
+}
+
+.non-sched-type {
+    background-color: white;
+}
+
+#production-status {
+    display: inline;
+}
+
+.inline-table {
+    display: inline-block;
+    float: left;
+}
+
+#production-status {
+    width: 30%;
+}
+
+.prod-status-header {
+    width: 200px;
+    height: 50px;
+    vertical-align: top;
+}
+
+.test {
+    height: 100px;
+}

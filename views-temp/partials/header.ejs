@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+    <!-- Per documentation respond.js must be placed in the head -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+
+    <!--Place external style sheets here for now.  Unsure how to
+        implement for different types.  Fix this later
+    -->
+    <!--External CSS-->
+
+
+                    <!--DUE TO HAVING ISSUES WITH ROUTES WITH PARAMETERS, NEEDED TO CHANGE THE WAY CSS IS LINKED NOT SURE IF THIS WILL CAUSE ANY FUTURE PROBLEMS-->
+
+                    <!--THE LINK ALLOWS IT TO GO BACK A FOLDER SO THAT IT CAN FIND THE CORRECT PATH FOR CSS-->
+
+                    <!-- <% cssFiles.forEach(function(cssFile) { %>
+                    
+                     <link rel="stylesheet" href="../css/<%= cssFile %>">
+
+                   <% }); %> -->
+
+                   <!-- the above code will add as many css files as needed, depending on what the route throws it. -->
+    <!--<link rel="stylesheet" href="../css/<%= cssFiles %>">-->
+
+
+    <meta charset="UTF-8">
+
+    <!-- PLACE TITLE HERE  -->
+    <!-- <title><%= title%></title> -->
+</head>
+<body>
+
+<!-- SHOULD LOAD ON EVERY PAGE OF THE APP-->
+<div class="row">
+    <div class="col-lg-12">
+
+        <div id="nav-bar">
+            <div class="col-lg-9">
+                 <h2><a href="/">Quiz App</a></h2>
+            </div>
+            <div class="col-lg-3">
+                <div id="nav-menu">
+                    <a href="/add">ADD </a>
+                    <a href="/edit">EDIT </a>
+                    <a href="/delete">DELETE </a>
+
+                </div>
+             </div>
+        </div>
+
+    </div> 
+</div> <!-- /end row -->

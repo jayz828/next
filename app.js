@@ -16,6 +16,8 @@ var port = process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+// set view engine so you do not have to add extensions in views
+
 
 
 // MY SQL SETTINGS - comment out mysql code to run on surface pro
@@ -80,6 +82,9 @@ app.get('/login', function(req,res) {
 });
 
 
+
+
+
 app.get('/dashboard', function(req,res) {
 
     res.render('dashboard', {title: 'Dashboard NeXT->',
@@ -98,6 +103,11 @@ app.get('/dashboard', function(req,res) {
                             });
 });
 
+
+app.get('/tally', function(req, res) {
+    res.render("tally", {title: "Tally"});
+
+});
 
 app.get('*', function(req, res) {
 

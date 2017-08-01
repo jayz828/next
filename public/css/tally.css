@@ -37,10 +37,69 @@ table td {
 
 .prod-status-header {
     width: 200px;
-    height: 50px;
+    /* height: 65px; */
+    height: 65px;
+    /* possible to add similar class top align  */
     vertical-align: top;
 }
 
-.test {
+/* .test {
     height: 100px;
+} */
+
+.hours-worked {
+    background-color: rgb(216, 228, 188);
+}
+
+.center-headers {
+    text-align: center;
+}
+
+.production {
+    background-color: rgb(230, 184, 183);
+}
+
+.top-align {
+      vertical-align: top;
+}
+
+.hours-earned {
+    background-color: rgb(197, 217,241);
+}
+
+.additional-notes {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.remove-left-border {
+    border-left: 0px solid;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.empty-row {
+    height: 25px;
+}
+
+
+/*  MEDIA QUERIES  */
+
+
+
+/* FOR IPAD MINI  */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
+    .prod-status-header {
+    
+        height: 80px;
+
+    }
 }

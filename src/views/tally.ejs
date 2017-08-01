@@ -30,19 +30,23 @@
 <body>
 
 
-<div class="container">
+<div class="container"> 
 
-    <table border=1 style="width: 75%">
+    <!-- <div class="jobFunction">
+        <h1>test</h1> <%= jobFunctions[0].jobFunction%>
+    </div> -->
+
+    <table class="" border=1 style="width: 75%">
         <tr>
             <td><h3>NAME:</h3></td>
             <td width="40%"><h4>Jason Natividad</h4></td>
             <td width="15%"></td>
             <td><h3>DATE:</h3></td>
-            <td width="25%"><h4>07/21/2017</h4></td>
+            <td width="25%"><h4>07/31/2017</h4></td>
         </tr>
     </table>
-    <table border=1 style="width: 75%">
-        <tr>
+    <table class=""  border=1 style="width: 75%">
+           <tr>
             <th width="5%"></th>
             <th width="30%">Job Function</th>
             <th width="10%">Item/Time</th>
@@ -50,8 +54,8 @@
             <th width="10%">DONE</th>
             <th width="10%">HRS EARN</th>
             <th width="25%">Notes</th>
-        </tr>
-        <tr>
+        </tr>  
+        <!-- <tr>
             <td>1</td>
             <td>Bills Keyed</td> 
             <td>BILLS</td>  
@@ -68,10 +72,23 @@
             <td><input type="text"></td>
             <td>0.00</td>
             <td></td>
+        </tr>  -->
+        <% var rowCount = 1 %>
+        <% jobFunctions.forEach(function(jobFunction) { %>
+            
+        <tr>
+            <td><%= rowCount++ %></td>
+            <td><%= jobFunction.jobFunction %></td> 
+            <td><%= jobFunction.itemTimeType %></td>  
+            <td><%= jobFunction.re %></td>
+            <td><input type="text"></td>
+            <td>0.00</td>
+            <td></td>
         </tr>
+        <% });  %>
     </table>
 
-    <table border="1" style="width: 75%">
+    <table class=""  border="1" style="width: 75%">
         <tr>
             <th class="tableBlue" width="5%"></th>
             <th class="tableBlue" width="30%">Total</th>
@@ -115,62 +132,96 @@
     </tr>
     <tr>
         <td class="non-sched-type" colspan="1">Celebrations</td>
-        <td colspan="1"></td>  
+        <td colspan="1"><input type="text"></td>  
         <td>0.00</td>   
         <!-- <td></td>  -->
     </tr>
     <tr>
         <td class="non-sched-type"  colspan="1">Meetings</td>
-        <td colspan="1"></td>  
+        <td colspan="1"><input type="text"></td>  
         <td>0.00</td>   
         <!-- <td></td>  -->
     </tr>
     <tr>
         <td class="non-sched-type"  colspan="1">Projects</td>
-        <td colspan="1"></td>  
+        <td colspan="1"><input type="text"></td>  
         <td>0.00</td>   
         <!-- <td></td>  -->
     </tr>
     <tr>
         <td class="non-sched-type"  colspan="1">Celebrations</td>
-        <td colspan="1"></td>  
+        <td colspan="1"><input type="text"></td>  
         <td>0.00</td>   
         <!-- <td></td>  -->
     </tr>
     <tr>
         <td class="non-sched-type"  colspan="1">Celebrations</td>
-        <td colspan="1"></td>  
+        <td colspan="1"><input type="text"></td>  
         <td>0.00</td>   
         <!-- <td></td>  -->
     </tr>
-    <tr>
+     <tr>
         <td class="non-sched-type"  colspan="1">Celebrations</td>
-        <td colspan="1"></td>  
+        <td colspan="1"><input type="text"></td>  
         <td>0.00</td>   
-        <!-- <td></td>  -->
-    </tr>
-    <tr>
+         <!-- <td></td>   -->
+    </tr> 
+    <!-- <tr>
         <td class="non-sched-type"  colspan="1">Celebrations</td>
-        <td colspan="1"></td>  
+        <td colspan="1"><input type="text"></td>  
         <td>0.00</td>   
-        <!-- <td></td>  -->
-    </tr>
+         <td></td>  
+    </tr> -->
     <tr>
         <td class="non-sched-type"  colspan="1">Total</td>
-        <td colspan="1"></td>  
+        <td colspan="1"><input type="text"></td>  
         <td>0.00</td>   
          <td></td>  
     </tr>
-    <tr>
-        <th colspan="4">Additonal Notes</th>
-    </tr>
+    <!-- <tr>
+        <th colspan="5" class="right-align">Additonal</th>
+    </tr> -->
 
 </table> 
-<table id="production-status" class="inline-table" border="0">
+
+
+ <table id="production-status" class="inline-table" border="0" style="width: 30%">
 
     <tr>
-        <th class="prod-status-header">Hours Work</th>
-        <th class="prod-status-header test">Total Production</th>
+        <th id="" class="prod-status-header center-headers hours-worked"><h4>Hours Work</h4></th>
+        <th class="prod-status-header center-headers production"><h4>Production</h4></th>
+    </tr>
+    <tr>
+        <td class="hours-worked"><h4>7.11</h4></td>
+        <td class="production"></td>
+    </tr>
+    <tr>
+        <td class="hours-earned"><h4>Hours Earned</h4></td>
+        <td class="production top-align center-headers"><h1>0.00%</h1></td>
+    </tr>
+    <tr>
+        <td class="hours-earned"><h4>0.00</h4></td>
+        <td class="production"></td>
+    </tr>
+    <!-- <tr>
+        <th class="additional-notes remove-left-border">Notes</th>
+        <th class="additional-notes remove-left-border">Notes</th>
+    </tr> -->
+</table> 
+
+<div class="clear-fix"></div>
+
+<table class=""  style="width: 75%">
+    <tr>
+        <th width="100%" class="additional-notes center-headers">Additional Notes</th>
+    </tr>
+    <tr>
+        <td width="50%" class="empty-row"></td>
+        <td width="50%"></td>
+    </tr>
+    <tr>
+        <td width="50%" class="empty-row"></td>
+        <td></td>
     </tr>
 </table>
 

@@ -22,26 +22,25 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // MY SQL SETTINGS - comment out mysql code to run on surface pro
 
-// var mysql = require('mysql');
-// var connection = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'admin',
-//     password: 'secret',
-//     database: 'next_db'
-//
-// });
-//
-// // var q = 'SELECT CURDATE()';
-//
-// var q = 'SELECT * FROM associates;';
-//
-// connection.query(q, function (error, results, fields) {
-//    if (error) throw error;
-//     console.log(results);
-//
-// });
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'admin',
+    password: 'secret',
+    database: 'next_db'
 
-// connection.end();
+});
+
+// var q = 'SELECT CURDATE()';
+
+var q = 'SELECT * FROM associates;';
+
+connection.query(q, function (error, results, fields) {
+   if (error) throw error;
+    console.log(results);
+
+});
+
 
 // app.use setups middleware, used by express first.
 app.use(express.static('public'));
@@ -105,7 +104,27 @@ app.get('/dashboard', function(req,res) {
 
 
 app.get('/tally', function(req, res) {
-    res.render("tally", {title: "Tally"});
+
+    var jobFunctions = [];
+    var jobFunctionQuery = 'SELECT job_function_name, re, item_time_type FROM job_functions;';
+   
+        connection.query(jobFunctionQuery, function (error, results, fields) {
+            if (error) throw error;
+
+                results.forEach(function(result){
+                    jobFunctions.push({jobFunction: result.job_function_name, re: result.re, itemTimeType: result.item_time_type});
+                });
+                // console.log(jobFunctions);
+
+                console.log(jobFunctions[0].jobFunction);
+            res.render("tally", {title: "Tally", jobFunctions: jobFunctions });
+
+            });
+
+        // console.log(jobFunctions);
+
+        // connection.close();
+
 
 });
 
